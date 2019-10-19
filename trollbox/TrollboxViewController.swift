@@ -3,7 +3,7 @@ import MessageKit
 import InputBarAccessoryView
 import UB
 
-public struct Sender: SenderType {
+public struct Sender: SenderType, Equatable {
     public let senderId: String
 
     public let displayName: String
@@ -83,6 +83,26 @@ extension TrollboxViewController: MessagesDataSource {
 
 extension TrollboxViewController: MessagesDisplayDelegate, MessagesLayoutDelegate {
 
+    func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+
+        return NSAttributedString(
+            string: "0x\(message.sender.displayName.prefix(5))",
+            attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)]
+        )
+    }
+
+
+    func messageTopLabelHeight(
+        for message: MessageType,
+        at indexPath: IndexPath,
+        in messagesCollectionView: MessagesCollectionView
+    ) -> CGFloat {
+        if message.sender as! Sender != sender {
+            return 20.0
+        }
+
+        return 0.0
+    }
 }
 
 extension TrollboxViewController: InputBarAccessoryViewDelegate {
@@ -132,15 +152,18 @@ extension TrollboxViewController: NodeDelegate {
             return
         }
 
+        let hex = message.from.hex
+
         DispatchQueue.main.async { [weak self] in
             guard let text = String(data: message.message, encoding: .utf8) else {
                 return
             }
 
+
             self?.messages.append(
                 Message(
                     text: text,
-                    user: Sender(senderId: "new id", displayName: "Foo"),
+                    user: Sender(senderId: hex, displayName: hex),
                     messageId: UUID().uuidString, date: Date()
                 )
             )
