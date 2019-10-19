@@ -13,7 +13,20 @@ class TrollboxViewController: MessagesViewController {
 
     var node = Node()
 
-    var messages = [MessageType]()
+    var messages = [MessageType]() {
+        didSet {
+            messagesCollectionView.performBatchUpdates({
+                messagesCollectionView.insertSections([messages.count - 1])
+                if messages.count >= 2 {
+                    messagesCollectionView.reloadSections([messages.count - 2])
+                }
+            }, completion: { [weak self] _ in
+                if self?.isLastSectionVisible() == true {
+                    self?.messagesCollectionView.scrollToBottom(animated: true)
+                }
+            })
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,21 +51,6 @@ class TrollboxViewController: MessagesViewController {
             messageInputBar.backgroundView.backgroundColor = .black
         }
 
-    }
-
-    func insertMessage(_ message: MockMessage) {
-        messages.append(message)
-        // Reload last section to update header/footer labels and insert a new one
-        messagesCollectionView.performBatchUpdates({
-            messagesCollectionView.insertSections([messages.count - 1])
-            if messages.count >= 2 {
-                messagesCollectionView.reloadSections([messages.count - 2])
-            }
-        }, completion: { [weak self] _ in
-            if self?.isLastSectionVisible() == true {
-                self?.messagesCollectionView.scrollToBottom(animated: true)
-            }
-        })
     }
 
     func isLastSectionVisible() -> Bool {
@@ -90,31 +88,37 @@ extension TrollboxViewController: MessagesDisplayDelegate, MessagesLayoutDelegat
 extension TrollboxViewController: InputBarAccessoryViewDelegate {
 
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        let components = inputBar.inputTextView.text!
+        let text = inputBar.inputTextView.text!
         messageInputBar.inputTextView.text = String()
         messageInputBar.invalidatePlugins()
 
         messageInputBar.sendButton.startAnimating()
         messageInputBar.inputTextView.placeholder = "Sending..."
         DispatchQueue.global(qos: .default).async {
-
-            guard let test = components.data(using: .utf8) else {
+            guard let encodedText = text.data(using: .utf8) else {
                 return
             }
 
-            let m = Message(service: UBID(repeating: 1, count: 1),
-                recipient: UBID(repeating: 0, count: 0),
-                from: UBID(repeating: 1, count: 1),
-                origin: UBID(repeating: 1, count: 1),
-                message: test)
-
-            self.node.send(m)
+            self.node.send(
+                Message(
+                    service: UBID(repeating: 1, count: 1),
+                    recipient: UBID(repeating: 0, count: 0),
+                    from: UBID(repeating: 1, count: 1),
+                    origin: UBID(repeating: 1, count: 1),
+                    message: encodedText
+                )
+            )
 
             DispatchQueue.main.async { [weak self] in
                 self?.messageInputBar.sendButton.stopAnimating()
                 self?.messageInputBar.inputTextView.placeholder = "Aa"
-                let message = MockMessage(text: components, user: sender, messageId: UUID().uuidString, date: Date())
-                self?.insertMessage(message)
+                let message = MockMessage(
+                    text: text,
+                    user: sender,
+                    messageId: UUID().uuidString, // @todo some calculatable
+                    date: Date()
+                )
+                self?.messages.append(message)
                 self?.messagesCollectionView.scrollToBottom(animated: true)
             }
         }
@@ -133,12 +137,15 @@ extension TrollboxViewController: NodeDelegate {
                 return
             }
 
-            self?.insertMessage(
-                MockMessage(text: text, user: Sender(senderId: "new id", displayName: "Foo"), messageId: UUID().uuidString, date: Date())
+            self?.messages.append(
+                MockMessage(
+                    text: text,
+                    user: Sender(senderId: "new id", displayName: "Foo"),
+                    messageId: UUID().uuidString, date: Date()
+                )
             )
         }
     }
-
 }
 
 internal struct MockMessage: MessageType {
