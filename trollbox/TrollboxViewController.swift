@@ -100,7 +100,7 @@ extension TrollboxViewController: InputBarAccessoryViewDelegate {
             }
 
             self.node.send(
-                Message(
+                UB.Message(
                     service: UBID(repeating: 1, count: 1),
                     recipient: UBID(repeating: 0, count: 0),
                     from: UBID(repeating: 1, count: 1),
@@ -112,7 +112,7 @@ extension TrollboxViewController: InputBarAccessoryViewDelegate {
             DispatchQueue.main.async { [weak self] in
                 self?.messageInputBar.sendButton.stopAnimating()
                 self?.messageInputBar.inputTextView.placeholder = "Aa"
-                let message = MockMessage(
+                let message = Message(
                     text: text,
                     user: sender,
                     messageId: UUID().uuidString, // @todo some calculatable
@@ -127,7 +127,7 @@ extension TrollboxViewController: InputBarAccessoryViewDelegate {
 
 extension TrollboxViewController: NodeDelegate {
 
-    func node(_ node: Node, didReceiveMessage message: Message) {
+    func node(_ node: Node, didReceiveMessage message: UB.Message) {
         if message.service != UBID(repeating: 1, count: 1) {
             return
         }
@@ -138,35 +138,12 @@ extension TrollboxViewController: NodeDelegate {
             }
 
             self?.messages.append(
-                MockMessage(
+                Message(
                     text: text,
                     user: Sender(senderId: "new id", displayName: "Foo"),
                     messageId: UUID().uuidString, date: Date()
                 )
             )
         }
-    }
-}
-
-internal struct MockMessage: MessageType {
-
-    var messageId: String
-    var sender: SenderType {
-        return user
-    }
-    var sentDate: Date
-    var kind: MessageKind
-
-    var user: SenderType
-
-    private init(kind: MessageKind, user: SenderType, messageId: String, date: Date) {
-        self.kind = kind
-        self.user = user
-        self.messageId = messageId
-        self.sentDate = date
-    }
-
-    init(text: String, user: SenderType, messageId: String, date: Date) {
-        self.init(kind: .text(text), user: user, messageId: messageId, date: date)
     }
 }
