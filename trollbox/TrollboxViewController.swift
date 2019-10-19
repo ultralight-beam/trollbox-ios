@@ -18,6 +18,7 @@ class TrollboxViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        node.delegate = self
         node.add(transport: CoreBluetoothTransport())
 
         title = "Trollbox"
@@ -97,18 +98,18 @@ extension TrollboxViewController: InputBarAccessoryViewDelegate {
         messageInputBar.inputTextView.placeholder = "Sending..."
         DispatchQueue.global(qos: .default).async {
 
-            guard let test = components.data(using: .utf8) else { return }
+            guard let test = components.data(using: .utf8) else {
+                return
+            }
 
-            // @todo send to UB
             let m = Message(service: UBID(repeating: 1, count: 1),
-            recipient: UBID(repeating: 0, count: 0),
-            from: UBID(repeating: 1, count: 1),
-            origin: UBID(repeating: 1, count: 1),
-            message: test)
+                recipient: UBID(repeating: 0, count: 0),
+                from: UBID(repeating: 1, count: 1),
+                origin: UBID(repeating: 1, count: 1),
+                message: test)
 
             self.node.send(m)
 
-            sleep(1)
             DispatchQueue.main.async { [weak self] in
                 self?.messageInputBar.sendButton.stopAnimating()
                 self?.messageInputBar.inputTextView.placeholder = "Aa"
@@ -116,6 +117,25 @@ extension TrollboxViewController: InputBarAccessoryViewDelegate {
                 self?.insertMessage(message)
                 self?.messagesCollectionView.scrollToBottom(animated: true)
             }
+        }
+    }
+}
+
+extension TrollboxViewController: NodeDelegate {
+
+    func node(_ node: Node, didReceiveMessage message: Message) {
+        if message.service != UBID(repeating: 1, count: 1) {
+            return
+        }
+
+        DispatchQueue.main.async { [weak self] in
+            guard let text = String(data: message.message, encoding: .utf8) else {
+                return
+            }
+
+            self?.insertMessage(
+                MockMessage(text: text, user: Sender(senderId: "new id", displayName: "Foo"), messageId: UUID().uuidString, date: Date())
+            )
         }
     }
 
@@ -138,7 +158,7 @@ internal struct MockMessage: MessageType {
         self.messageId = messageId
         self.sentDate = date
     }
-    
+
     init(text: String, user: SenderType, messageId: String, date: Date) {
         self.init(kind: .text(text), user: user, messageId: messageId, date: date)
     }
