@@ -1,5 +1,7 @@
 import UIKit
 import MessageKit
+import InputBarAccessoryView
+import UB
 
 public struct Sender: SenderType {
     public let senderId: String
@@ -9,13 +11,22 @@ public struct Sender: SenderType {
 
 class TrollboxViewController: MessagesViewController {
 
+    var node = Node()
+
     var messages = [MessageType]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        node.add(transport: CoreBluetoothTransport())
+
+        title = "Trollbox"
+
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
+
+        messageInputBar.delegate = self
 
         if traitCollection.userInterfaceStyle == .light {
             messageInputBar.inputTextView.textColor = .black
@@ -27,6 +38,32 @@ class TrollboxViewController: MessagesViewController {
         }
 
     }
+
+    func insertMessage(_ message: MockMessage) {
+        messages.append(message)
+        // Reload last section to update header/footer labels and insert a new one
+        messagesCollectionView.performBatchUpdates({
+            messagesCollectionView.insertSections([messages.count - 1])
+            if messages.count >= 2 {
+                messagesCollectionView.reloadSections([messages.count - 2])
+            }
+        }, completion: { [weak self] _ in
+            if self?.isLastSectionVisible() == true {
+                self?.messagesCollectionView.scrollToBottom(animated: true)
+            }
+        })
+    }
+
+    func isLastSectionVisible() -> Bool {
+
+        guard !messages.isEmpty else {
+            return false
+        }
+
+        let lastIndexPath = IndexPath(item: 0, section: messages.count - 1)
+
+        return messagesCollectionView.indexPathsForVisibleItems.contains(lastIndexPath)
+    }
 }
 
 let sender = Sender(senderId: "any_unique_id", displayName: "Steven")
@@ -34,7 +71,6 @@ let sender = Sender(senderId: "any_unique_id", displayName: "Steven")
 extension TrollboxViewController: MessagesDataSource {
     func currentSender() -> SenderType {
         return Sender(senderId: "any_unique_id", displayName: "Steven")
-
     }
 
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
@@ -48,4 +84,62 @@ extension TrollboxViewController: MessagesDataSource {
 
 extension TrollboxViewController: MessagesDisplayDelegate, MessagesLayoutDelegate {
 
+}
+
+extension TrollboxViewController: InputBarAccessoryViewDelegate {
+
+    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
+        let components = inputBar.inputTextView.text!
+        messageInputBar.inputTextView.text = String()
+        messageInputBar.invalidatePlugins()
+
+        messageInputBar.sendButton.startAnimating()
+        messageInputBar.inputTextView.placeholder = "Sending..."
+        DispatchQueue.global(qos: .default).async {
+
+            guard let test = components.data(using: .utf8) else { return }
+
+            // @todo send to UB
+            let m = Message(service: UBID(repeating: 1, count: 1),
+            recipient: UBID(repeating: 0, count: 0),
+            from: UBID(repeating: 1, count: 1),
+            origin: UBID(repeating: 1, count: 1),
+            message: test)
+
+            self.node.send(m)
+
+            sleep(1)
+            DispatchQueue.main.async { [weak self] in
+                self?.messageInputBar.sendButton.stopAnimating()
+                self?.messageInputBar.inputTextView.placeholder = "Aa"
+                let message = MockMessage(text: components, user: sender, messageId: UUID().uuidString, date: Date())
+                self?.insertMessage(message)
+                self?.messagesCollectionView.scrollToBottom(animated: true)
+            }
+        }
+    }
+
+}
+
+internal struct MockMessage: MessageType {
+
+    var messageId: String
+    var sender: SenderType {
+        return user
+    }
+    var sentDate: Date
+    var kind: MessageKind
+
+    var user: SenderType
+
+    private init(kind: MessageKind, user: SenderType, messageId: String, date: Date) {
+        self.kind = kind
+        self.user = user
+        self.messageId = messageId
+        self.sentDate = date
+    }
+    
+    init(text: String, user: SenderType, messageId: String, date: Date) {
+        self.init(kind: .text(text), user: user, messageId: messageId, date: date)
+    }
 }
