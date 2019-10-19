@@ -7,6 +7,7 @@ target 'trollbox' do
 
   # Pods for trollbox
   pod 'UB', '~> 0.2'
+  pod 'MessageKit'
 
   target 'trollboxTests' do
     inherit! :search_paths

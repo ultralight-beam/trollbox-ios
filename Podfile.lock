@@ -1,20 +1,28 @@
 PODS:
+  - InputBarAccessoryView (4.2.2)
+  - MessageKit (3.0.0):
+    - InputBarAccessoryView (~> 4.2.2)
   - SwiftProtobuf (1.7.0)
   - UB (0.2.0):
     - SwiftProtobuf
 
 DEPENDENCIES:
+  - MessageKit
   - UB (~> 0.2)
 
 SPEC REPOS:
   trunk:
+    - InputBarAccessoryView
+    - MessageKit
     - SwiftProtobuf
     - UB
 
 SPEC CHECKSUMS:
+  InputBarAccessoryView: 2b937602598e2fab3149f37f51dd7ad795653812
+  MessageKit: e892a9ca49ebe6d82684d3a93ad84021fa23e2c6
   SwiftProtobuf: 4fd9645e69b72cbae6ec8da5be0cdd20ca6565dd
   UB: dc30a102dc4bd24313f0387b404291dbdeeb97c8
 
-PODFILE CHECKSUM: 6a03ab5557d675d70e1884f4ab2186dcafe4fc49
+PODFILE CHECKSUM: df7bd56890e6da59a1312d05e2bc85cc29736b4f
 
 COCOAPODS: 1.8.3
