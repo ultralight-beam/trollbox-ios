@@ -6,7 +6,7 @@
 build/*
 *.pbxuser
 *.mode1v3
-
+*.xcodeproj
 ## Build generated
 build/
 DerivedData/
