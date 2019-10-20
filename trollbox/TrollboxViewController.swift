@@ -41,6 +41,7 @@ class TrollboxViewController: MessagesViewController {
         messagesCollectionView.messagesDisplayDelegate = self
 
         messageInputBar.delegate = self
+        messageInputBar.inputTextView.placeholder = "Message"
 
         if traitCollection.userInterfaceStyle == .light {
             messageInputBar.inputTextView.textColor = .black
@@ -130,7 +131,7 @@ extension TrollboxViewController: InputBarAccessoryViewDelegate {
 
             DispatchQueue.main.async { [weak self] in
                 self?.messageInputBar.sendButton.stopAnimating()
-                self?.messageInputBar.inputTextView.placeholder = "Aa"
+                self?.messageInputBar.inputTextView.placeholder = "Message"
                 let message = Message(
                     text: text,
                     user: sender,
