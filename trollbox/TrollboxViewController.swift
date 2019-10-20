@@ -91,7 +91,6 @@ extension TrollboxViewController: MessagesDisplayDelegate, MessagesLayoutDelegat
         )
     }
 
-
     func messageTopLabelHeight(
         for message: MessageType,
         at indexPath: IndexPath,
@@ -158,7 +157,6 @@ extension TrollboxViewController: NodeDelegate {
             guard let text = String(data: message.message, encoding: .utf8) else {
                 return
             }
-
 
             self?.messages.append(
                 Message(
