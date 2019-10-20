@@ -5,7 +5,6 @@
 ## Build generated
 build/
 DerivedData/
-trollbox.xcodeproj
 trollbox.xcworkspace
 
 ## Various settings

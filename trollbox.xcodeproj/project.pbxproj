@@ -1,0 +1,751 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2EBEF55F235B0AB10038B545 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBEF55E235B0AB10038B545 /* AppDelegate.swift */; };
+		2EBEF565235B0AB10038B545 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EBEF564235B0AB10038B545 /* Assets.xcassets */; };
+		2EBEF56B235B0AB10038B545 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EBEF569235B0AB10038B545 /* LaunchScreen.storyboard */; };
+		2EBEF576235B0AB20038B545 /* trollboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBEF575235B0AB20038B545 /* trollboxTests.swift */; };
+		2EBEF581235B0AB20038B545 /* trollboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBEF580235B0AB20038B545 /* trollboxUITests.swift */; };
+		2EBEF593235B10F50038B545 /* TrollboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBEF592235B10F50038B545 /* TrollboxViewController.swift */; };
+		2EBF380C235BA6CE001BD96F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBF380B235BA6CE001BD96F /* Message.swift */; };
+		2EBF380F235BAECC001BD96F /* Addr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBF380E235BAECC001BD96F /* Addr.swift */; };
+		541E8A48AF7A837F57F5235A /* Pods_trollbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D672E5ED4DE3F84B06740225 /* Pods_trollbox.framework */; };
+		7060BDBD4EF6BEB1AC2414A4 /* Pods_trollboxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95B29C38223B5793EEC0D8F8 /* Pods_trollboxTests.framework */; };
+		995D05D616F28824B2953C31 /* Pods_trollbox_trollboxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6587271898187D62FD52AA1C /* Pods_trollbox_trollboxUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2EBEF572235B0AB20038B545 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EBEF553235B0AB10038B545 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EBEF55A235B0AB10038B545;
+			remoteInfo = trollbox;
+		};
+		2EBEF57D235B0AB20038B545 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EBEF553235B0AB10038B545 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EBEF55A235B0AB10038B545;
+			remoteInfo = trollbox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		038E03D1676D1588DBC5F3F5 /* Pods-trollbox-trollboxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trollbox-trollboxUITests.release.xcconfig"; path = "Target Support Files/Pods-trollbox-trollboxUITests/Pods-trollbox-trollboxUITests.release.xcconfig"; sourceTree = "<group>"; };
+		09C33610DDDD32F33D56EEB8 /* Pods-trollboxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trollboxTests.debug.xcconfig"; path = "Target Support Files/Pods-trollboxTests/Pods-trollboxTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2EBEF55B235B0AB10038B545 /* trollbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trollbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EBEF55E235B0AB10038B545 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2EBEF564235B0AB10038B545 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2EBEF56A235B0AB10038B545 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2EBEF56C235B0AB10038B545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EBEF571235B0AB20038B545 /* trollboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = trollboxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EBEF575235B0AB20038B545 /* trollboxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trollboxTests.swift; sourceTree = "<group>"; };
+		2EBEF577235B0AB20038B545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EBEF57C235B0AB20038B545 /* trollboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = trollboxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EBEF580235B0AB20038B545 /* trollboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trollboxUITests.swift; sourceTree = "<group>"; };
+		2EBEF582235B0AB20038B545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EBEF592235B10F50038B545 /* TrollboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrollboxViewController.swift; sourceTree = "<group>"; };
+		2EBF380B235BA6CE001BD96F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		2EBF380E235BAECC001BD96F /* Addr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Addr.swift; sourceTree = "<group>"; };
+		4CFF134CCFE6AFE89E1E9D37 /* Pods-trollbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trollbox.debug.xcconfig"; path = "Target Support Files/Pods-trollbox/Pods-trollbox.debug.xcconfig"; sourceTree = "<group>"; };
+		6587271898187D62FD52AA1C /* Pods_trollbox_trollboxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trollbox_trollboxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95B29C38223B5793EEC0D8F8 /* Pods_trollboxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trollboxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B16F758F3F95F1873A3A3625 /* Pods-trollbox-trollboxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trollbox-trollboxUITests.debug.xcconfig"; path = "Target Support Files/Pods-trollbox-trollboxUITests/Pods-trollbox-trollboxUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CD32B66EA9966A14CE2DACEF /* Pods-trollboxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trollboxTests.release.xcconfig"; path = "Target Support Files/Pods-trollboxTests/Pods-trollboxTests.release.xcconfig"; sourceTree = "<group>"; };
+		D672E5ED4DE3F84B06740225 /* Pods_trollbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trollbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3739F7887B21718CC97D69E /* Pods-trollbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trollbox.release.xcconfig"; path = "Target Support Files/Pods-trollbox/Pods-trollbox.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2EBEF558235B0AB10038B545 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				541E8A48AF7A837F57F5235A /* Pods_trollbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EBEF56E235B0AB20038B545 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7060BDBD4EF6BEB1AC2414A4 /* Pods_trollboxTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EBEF579235B0AB20038B545 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				995D05D616F28824B2953C31 /* Pods_trollbox_trollboxUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0272058E37C5D454B103AD2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D672E5ED4DE3F84B06740225 /* Pods_trollbox.framework */,
+				6587271898187D62FD52AA1C /* Pods_trollbox_trollboxUITests.framework */,
+				95B29C38223B5793EEC0D8F8 /* Pods_trollboxTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2EBEF552235B0AB10038B545 = {
+			isa = PBXGroup;
+			children = (
+				2EBEF55D235B0AB10038B545 /* trollbox */,
+				2EBEF574235B0AB20038B545 /* trollboxTests */,
+				2EBEF57F235B0AB20038B545 /* trollboxUITests */,
+				2EBEF55C235B0AB10038B545 /* Products */,
+				36A917D89E67226D9DF3B359 /* Pods */,
+				0272058E37C5D454B103AD2A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2EBEF55C235B0AB10038B545 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2EBEF55B235B0AB10038B545 /* trollbox.app */,
+				2EBEF571235B0AB20038B545 /* trollboxTests.xctest */,
+				2EBEF57C235B0AB20038B545 /* trollboxUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2EBEF55D235B0AB10038B545 /* trollbox */ = {
+			isa = PBXGroup;
+			children = (
+				2EBF380D235BAE9E001BD96F /* Extensions */,
+				2EBEF55E235B0AB10038B545 /* AppDelegate.swift */,
+				2EBEF564235B0AB10038B545 /* Assets.xcassets */,
+				2EBEF569235B0AB10038B545 /* LaunchScreen.storyboard */,
+				2EBEF56C235B0AB10038B545 /* Info.plist */,
+				2EBEF592235B10F50038B545 /* TrollboxViewController.swift */,
+				2EBF380B235BA6CE001BD96F /* Message.swift */,
+			);
+			path = trollbox;
+			sourceTree = "<group>";
+		};
+		2EBEF574235B0AB20038B545 /* trollboxTests */ = {
+			isa = PBXGroup;
+			children = (
+				2EBEF575235B0AB20038B545 /* trollboxTests.swift */,
+				2EBEF577235B0AB20038B545 /* Info.plist */,
+			);
+			path = trollboxTests;
+			sourceTree = "<group>";
+		};
+		2EBEF57F235B0AB20038B545 /* trollboxUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2EBEF580235B0AB20038B545 /* trollboxUITests.swift */,
+				2EBEF582235B0AB20038B545 /* Info.plist */,
+			);
+			path = trollboxUITests;
+			sourceTree = "<group>";
+		};
+		2EBF380D235BAE9E001BD96F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2EBF380E235BAECC001BD96F /* Addr.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		36A917D89E67226D9DF3B359 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4CFF134CCFE6AFE89E1E9D37 /* Pods-trollbox.debug.xcconfig */,
+				E3739F7887B21718CC97D69E /* Pods-trollbox.release.xcconfig */,
+				B16F758F3F95F1873A3A3625 /* Pods-trollbox-trollboxUITests.debug.xcconfig */,
+				038E03D1676D1588DBC5F3F5 /* Pods-trollbox-trollboxUITests.release.xcconfig */,
+				09C33610DDDD32F33D56EEB8 /* Pods-trollboxTests.debug.xcconfig */,
+				CD32B66EA9966A14CE2DACEF /* Pods-trollboxTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2EBEF55A235B0AB10038B545 /* trollbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EBEF585235B0AB20038B545 /* Build configuration list for PBXNativeTarget "trollbox" */;
+			buildPhases = (
+				5CF238F5985D36911B731A29 /* [CP] Check Pods Manifest.lock */,
+				2EBEF557235B0AB10038B545 /* Sources */,
+				2EBEF558235B0AB10038B545 /* Frameworks */,
+				2EBEF559235B0AB10038B545 /* Resources */,
+				A4AA9619BBE8E6CE77088956 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = trollbox;
+			productName = trollbox;
+			productReference = 2EBEF55B235B0AB10038B545 /* trollbox.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2EBEF570235B0AB20038B545 /* trollboxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EBEF588235B0AB20038B545 /* Build configuration list for PBXNativeTarget "trollboxTests" */;
+			buildPhases = (
+				ED7AA51A225A75A423C0C391 /* [CP] Check Pods Manifest.lock */,
+				2EBEF56D235B0AB20038B545 /* Sources */,
+				2EBEF56E235B0AB20038B545 /* Frameworks */,
+				2EBEF56F235B0AB20038B545 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EBEF573235B0AB20038B545 /* PBXTargetDependency */,
+			);
+			name = trollboxTests;
+			productName = trollboxTests;
+			productReference = 2EBEF571235B0AB20038B545 /* trollboxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2EBEF57B235B0AB20038B545 /* trollboxUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EBEF58B235B0AB20038B545 /* Build configuration list for PBXNativeTarget "trollboxUITests" */;
+			buildPhases = (
+				B4C5406C5A6E5ABE86E139E6 /* [CP] Check Pods Manifest.lock */,
+				2EBEF578235B0AB20038B545 /* Sources */,
+				2EBEF579235B0AB20038B545 /* Frameworks */,
+				2EBEF57A235B0AB20038B545 /* Resources */,
+				97E3A76AA1F91E9474D3353A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EBEF57E235B0AB20038B545 /* PBXTargetDependency */,
+			);
+			name = trollboxUITests;
+			productName = trollboxUITests;
+			productReference = 2EBEF57C235B0AB20038B545 /* trollboxUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2EBEF553235B0AB10038B545 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Dean Eigenmann";
+				TargetAttributes = {
+					2EBEF55A235B0AB10038B545 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					2EBEF570235B0AB20038B545 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 2EBEF55A235B0AB10038B545;
+					};
+					2EBEF57B235B0AB20038B545 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 2EBEF55A235B0AB10038B545;
+					};
+				};
+			};
+			buildConfigurationList = 2EBEF556235B0AB10038B545 /* Build configuration list for PBXProject "trollbox" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2EBEF552235B0AB10038B545;
+			productRefGroup = 2EBEF55C235B0AB10038B545 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2EBEF55A235B0AB10038B545 /* trollbox */,
+				2EBEF570235B0AB20038B545 /* trollboxTests */,
+				2EBEF57B235B0AB20038B545 /* trollboxUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2EBEF559235B0AB10038B545 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EBEF56B235B0AB10038B545 /* LaunchScreen.storyboard in Resources */,
+				2EBEF565235B0AB10038B545 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EBEF56F235B0AB20038B545 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EBEF57A235B0AB20038B545 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5CF238F5985D36911B731A29 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-trollbox-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97E3A76AA1F91E9474D3353A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-trollbox-trollboxUITests/Pods-trollbox-trollboxUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-trollbox-trollboxUITests/Pods-trollbox-trollboxUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-trollbox-trollboxUITests/Pods-trollbox-trollboxUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4AA9619BBE8E6CE77088956 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-trollbox/Pods-trollbox-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-trollbox/Pods-trollbox-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-trollbox/Pods-trollbox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4C5406C5A6E5ABE86E139E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-trollbox-trollboxUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED7AA51A225A75A423C0C391 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-trollboxTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2EBEF557235B0AB10038B545 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EBF380F235BAECC001BD96F /* Addr.swift in Sources */,
+				2EBF380C235BA6CE001BD96F /* Message.swift in Sources */,
+				2EBEF593235B10F50038B545 /* TrollboxViewController.swift in Sources */,
+				2EBEF55F235B0AB10038B545 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EBEF56D235B0AB20038B545 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EBEF576235B0AB20038B545 /* trollboxTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2EBEF578235B0AB20038B545 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2EBEF581235B0AB20038B545 /* trollboxUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2EBEF573235B0AB20038B545 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EBEF55A235B0AB10038B545 /* trollbox */;
+			targetProxy = 2EBEF572235B0AB20038B545 /* PBXContainerItemProxy */;
+		};
+		2EBEF57E235B0AB20038B545 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EBEF55A235B0AB10038B545 /* trollbox */;
+			targetProxy = 2EBEF57D235B0AB20038B545 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2EBEF569235B0AB10038B545 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2EBEF56A235B0AB10038B545 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2EBEF583235B0AB20038B545 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2EBEF584235B0AB20038B545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2EBEF586235B0AB20038B545 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CFF134CCFE6AFE89E1E9D37 /* Pods-trollbox.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9W792Z62E5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = trollbox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ultralight-beam.trollbox";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2EBEF587235B0AB20038B545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3739F7887B21718CC97D69E /* Pods-trollbox.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9W792Z62E5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = trollbox/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ultralight-beam.trollbox";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2EBEF589235B0AB20038B545 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09C33610DDDD32F33D56EEB8 /* Pods-trollboxTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9W792Z62E5;
+				INFOPLIST_FILE = trollboxTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ultralight-beam.trollboxTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/trollbox.app/trollbox";
+			};
+			name = Debug;
+		};
+		2EBEF58A235B0AB20038B545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD32B66EA9966A14CE2DACEF /* Pods-trollboxTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9W792Z62E5;
+				INFOPLIST_FILE = trollboxTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ultralight-beam.trollboxTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/trollbox.app/trollbox";
+			};
+			name = Release;
+		};
+		2EBEF58C235B0AB20038B545 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B16F758F3F95F1873A3A3625 /* Pods-trollbox-trollboxUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9W792Z62E5;
+				INFOPLIST_FILE = trollboxUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ultralight-beam.trollboxUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = trollbox;
+			};
+			name = Debug;
+		};
+		2EBEF58D235B0AB20038B545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 038E03D1676D1588DBC5F3F5 /* Pods-trollbox-trollboxUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9W792Z62E5;
+				INFOPLIST_FILE = trollboxUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ultralight-beam.trollboxUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = trollbox;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2EBEF556235B0AB10038B545 /* Build configuration list for PBXProject "trollbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EBEF583235B0AB20038B545 /* Debug */,
+				2EBEF584235B0AB20038B545 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EBEF585235B0AB20038B545 /* Build configuration list for PBXNativeTarget "trollbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EBEF586235B0AB20038B545 /* Debug */,
+				2EBEF587235B0AB20038B545 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EBEF588235B0AB20038B545 /* Build configuration list for PBXNativeTarget "trollboxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EBEF589235B0AB20038B545 /* Debug */,
+				2EBEF58A235B0AB20038B545 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2EBEF58B235B0AB20038B545 /* Build configuration list for PBXNativeTarget "trollboxUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2EBEF58C235B0AB20038B545 /* Debug */,
+				2EBEF58D235B0AB20038B545 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2EBEF553235B0AB10038B545 /* Project object */;
+}
