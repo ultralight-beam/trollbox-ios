@@ -1,7 +1,7 @@
 included:
-  - trollbox
-  - trollboxTests
-  - trollboxUITests
+  - Sources
+  - Tests
+  - UITests
 excluded:
   - Pods/
 
