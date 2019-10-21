@@ -3,12 +3,6 @@ import MessageKit
 import InputBarAccessoryView
 import UB
 
-public struct Sender: SenderType, Equatable {
-    public let senderId: String
-
-    public let displayName: String
-}
-
 class TrollboxViewController: MessagesViewController {
 
     var node = Node()
@@ -70,7 +64,7 @@ let sender = Sender(senderId: "any_unique_id", displayName: "Steven")
 
 extension TrollboxViewController: MessagesDataSource {
     func currentSender() -> SenderType {
-        return Sender(senderId: "any_unique_id", displayName: "Steven")
+        return sender
     }
 
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
@@ -85,10 +79,11 @@ extension TrollboxViewController: MessagesDataSource {
 extension TrollboxViewController: MessagesDisplayDelegate, MessagesLayoutDelegate {
 
     func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
-
         return NSAttributedString(
             string: "0x\(message.sender.displayName.prefix(5))",
-            attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)]
+            attributes: [
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)
+            ]
         )
     }
 
