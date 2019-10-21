@@ -2,10 +2,11 @@ import UIKit
 import MessageKit
 import InputBarAccessoryView
 import UB
+import CryptoKit
 
 class TrollboxViewController: MessagesViewController {
 
-    var node = Node()
+    var node = Node(key: Curve25519.Signing.PrivateKey())
 
     var messages = [MessageType]() {
         didSet {
