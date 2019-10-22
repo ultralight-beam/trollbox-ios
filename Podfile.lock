@@ -8,21 +8,24 @@ PODS:
 
 DEPENDENCIES:
   - MessageKit
-  - UB (~> 0.2)
+  - UB (from `../UB.swift`)
 
 SPEC REPOS:
   trunk:
     - InputBarAccessoryView
     - MessageKit
     - SwiftProtobuf
-    - UB
+
+EXTERNAL SOURCES:
+  UB:
+    :path: "../UB.swift"
 
 SPEC CHECKSUMS:
   InputBarAccessoryView: 2b937602598e2fab3149f37f51dd7ad795653812
   MessageKit: e892a9ca49ebe6d82684d3a93ad84021fa23e2c6
   SwiftProtobuf: 4fd9645e69b72cbae6ec8da5be0cdd20ca6565dd
-  UB: dc30a102dc4bd24313f0387b404291dbdeeb97c8
+  UB: 8e41566d43e8fe368308859def2d4bb47eb8585e
 
-PODFILE CHECKSUM: 9416716bb5622e42b8cb2e91040920102796f9bb
+PODFILE CHECKSUM: 64005a3e697282272abd3461c341c102a25c04f0
 
-COCOAPODS: 1.8.3
+COCOAPODS: 1.8.4
