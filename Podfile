@@ -6,7 +6,8 @@ target 'Trollbox' do
   use_frameworks!
 
   # Pods for trollbox
-  pod 'UB', '~> 0.2'
+  pod 'UB', :path => '../UB.swift'
+  # pod 'UB', '~> 0.2'
   pod 'MessageKit'
 
   target 'TrollboxTests' do
