@@ -1,10 +1,9 @@
-import UIKit
-import MessageKit
 import InputBarAccessoryView
+import MessageKit
 import UB
+import UIKit
 
 class TrollboxViewController: MessagesViewController {
-
     var node = Node()
 
     var messages = [MessageType]() {
@@ -45,11 +44,9 @@ class TrollboxViewController: MessagesViewController {
             messageInputBar.inputTextView.backgroundColor = .black
             messageInputBar.backgroundView.backgroundColor = .black
         }
-
     }
 
     func isLastSectionVisible() -> Bool {
-
         guard !messages.isEmpty else {
             return false
         }
@@ -67,30 +64,29 @@ extension TrollboxViewController: MessagesDataSource {
         return sender
     }
 
-    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+    func numberOfSections(in _: MessagesCollectionView) -> Int {
         return messages.count
     }
 
-    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+    func messageForItem(at indexPath: IndexPath, in _: MessagesCollectionView) -> MessageType {
         return messages[indexPath.section]
     }
 }
 
 extension TrollboxViewController: MessagesDisplayDelegate, MessagesLayoutDelegate {
-
-    func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+    func messageTopLabelAttributedText(for message: MessageType, at _: IndexPath) -> NSAttributedString? {
         return NSAttributedString(
             string: "0x\(message.sender.displayName.prefix(5))",
             attributes: [
-                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)
+                NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2),
             ]
         )
     }
 
     func messageTopLabelHeight(
         for message: MessageType,
-        at indexPath: IndexPath,
-        in messagesCollectionView: MessagesCollectionView
+        at _: IndexPath,
+        in _: MessagesCollectionView
     ) -> CGFloat {
         if message.sender as! Sender != sender {
             return 20.0
@@ -101,7 +97,6 @@ extension TrollboxViewController: MessagesDisplayDelegate, MessagesLayoutDelegat
 }
 
 extension TrollboxViewController: InputBarAccessoryViewDelegate {
-
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         let text = inputBar.inputTextView.text!
         messageInputBar.inputTextView.text = String()
@@ -141,8 +136,7 @@ extension TrollboxViewController: InputBarAccessoryViewDelegate {
 }
 
 extension TrollboxViewController: NodeDelegate {
-
-    func node(_ node: Node, didReceiveMessage message: UB.Message) {
+    func node(_: Node, didReceiveMessage message: UB.Message) {
         if message.service != UBID(repeating: 1, count: 1) {
             return
         }
