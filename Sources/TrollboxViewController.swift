@@ -6,7 +6,11 @@ import CryptoKit
 
 class TrollboxViewController: MessagesViewController {
 
-    var node = Node(key: Curve25519.Signing.PrivateKey())
+    let key = Curve25519.Signing.PrivateKey()
+
+    var node = Node(key: key)
+
+    var sender = Sender(senderId: key.publicKey, displayName: "Steven")
 
     var messages = [MessageType]() {
         didSet {
@@ -60,8 +64,6 @@ class TrollboxViewController: MessagesViewController {
         return messagesCollectionView.indexPathsForVisibleItems.contains(lastIndexPath)
     }
 }
-
-let sender = Sender(senderId: "any_unique_id", displayName: "Steven")
 
 extension TrollboxViewController: MessagesDataSource {
     func currentSender() -> SenderType {
