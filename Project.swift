@@ -12,8 +12,9 @@ let project = Project(
             sources: ["Sources/**"],
             resources: [],
             dependencies: [
-                .cocoapods(path: ".")
-            ]),
+                .cocoapods(path: "."),
+            ]
+        ),
         Target(
             name: "TrollboxTests",
             platform: .iOS,
@@ -22,8 +23,9 @@ let project = Project(
             infoPlist: "Tests.plist",
             sources: "Tests/**",
             dependencies: [
-                .target(name: "Trollbox")
-            ]),
+                .target(name: "Trollbox"),
+            ]
+        ),
         Target(
             name: "TrollboxUITests",
             platform: .iOS,
@@ -32,7 +34,8 @@ let project = Project(
             infoPlist: "UITests.plist",
             sources: "UITests/**",
             dependencies: [
-                .target(name: "Trollbox")
-            ])
+                .target(name: "Trollbox"),
+            ]
+        ),
     ]
 )
