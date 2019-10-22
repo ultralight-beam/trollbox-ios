@@ -6,8 +6,14 @@ import UB
 class TrollboxViewController: MessagesViewController {
 
     var node = Node()
+    
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    private var messageLogs = [Messages]() // TODO: what the fuck is this?
+    private var conversations = [Conversation]() // TODO: what the fuck is this?
 
-    var messages = [MessageType]() {
+    var messages = [MessageType]() { // TODO how can i change this to use `Messages` instead?
         didSet {
             messagesCollectionView.performBatchUpdates({
                 messagesCollectionView.insertSections([messages.count - 1])
@@ -46,6 +52,15 @@ class TrollboxViewController: MessagesViewController {
             messageInputBar.backgroundView.backgroundColor = .black
         }
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        do {
+            messageLogs = try context.fetch(Messages.fetchRequest())
+        } catch let error as NSError {
+            print ("Could not fetch. \(error), \(error.userInfo)")
+        }
     }
 
     func isLastSectionVisible() -> Bool {
